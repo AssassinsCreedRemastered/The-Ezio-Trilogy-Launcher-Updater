@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SharpCompress.Common;
+using SharpCompress.Archives;
 
 namespace The_Ezio_Trilogy_Launcher_Updater
 {
@@ -89,6 +91,8 @@ namespace The_Ezio_Trilogy_Launcher_Updater
                 return;
             }
         }
+
+
         private async Task Installation()
         {
             try
@@ -128,7 +132,7 @@ namespace The_Ezio_Trilogy_Launcher_Updater
                     }
                 }
                 GC.Collect();
-                await Task.Delay(10);
+                await Task.Delay(1);
             }
             catch (Exception ex)
             {
@@ -151,6 +155,7 @@ namespace The_Ezio_Trilogy_Launcher_Updater
                         }
                     }
                 }
+                await Task.Delay(1);
             }
             catch (Exception ex)
             {
@@ -185,7 +190,7 @@ namespace The_Ezio_Trilogy_Launcher_Updater
         {
             await DeleteOldLauncher();
             await DownloadNewVersion();
-            //await Installation();
+            await Installation();
             OpenLauncher.IsEnabled = true;
         }
 
