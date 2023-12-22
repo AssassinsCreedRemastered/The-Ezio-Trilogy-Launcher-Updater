@@ -7,7 +7,7 @@ namespace The_Ezio_Trilogy_Launcher_Updater
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App : System.Windows.Application
     {
     }
 }
